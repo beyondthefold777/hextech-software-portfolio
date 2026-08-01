@@ -1,26 +1,41 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Base: Template dark blue */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  
+  /* Hextech Purple Accent - Arcane inspired */
+  --hextech-purple: #a855f7;
+  --hextech-purple-glow: #c084fc;
+  --hextech-blue: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+  
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Hextech glow effect for buttons/CTAs */
+.hextech-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  transition: all 0.3s ease;
+}
+
+.hextech-glow:hover {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Rune pattern background */
+.rune-pattern {
+  background-image: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
 }
