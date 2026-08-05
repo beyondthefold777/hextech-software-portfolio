@@ -42,20 +42,18 @@ export default function Home() {
 
         <div className="hidden md:flex gap-8 text-slate-300">
           <Link href="#services" className="hover:text-white transition">What We Build</Link>
-          <Link href="#facts" className="hover:text-white transition">Facts</Link>
+          <Link href="/facts" className="hover:text-white transition">Facts</Link>
           <Link href="#work" className="hover:text-white transition">Work</Link>
-          <Link href="#pricing" className="hover:text-white transition">Pricing</Link>
-          <Link href="#contact" className="hover:text-white transition">Contact</Link>
+          <Link href="/pricing" className="hover:text-white transition">Pricing</Link>
+          <Link href="/contact" className="hover:text-white transition">Contact</Link>
         </div>
 
-        <button
-          data-cal-namespace="15min"
-          data-cal-link="beyondthefold777/15min"
-          data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+        <a
+          href="tel:+14138965642"
           className="px-5 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 font-medium transition"
         >
           Call Now
-        </button>
+        </a>
       </nav>
 
       {/* Hero */}

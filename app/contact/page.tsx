@@ -15,11 +15,15 @@ export default function ContactPage() {
     e.preventDefault()
     setStatus('loading')
     
-    // For now this just logs. Replace with your API route / Resend / Formspree
     try {
-      console.log('Form submitted:', formData)
-      // await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-      await new Promise(r => setTimeout(r, 1000)) // fake delay
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) throw new Error('Failed')
+      
       setStatus('success')
       setFormData({ name: '', email: '', phone: '', message: '' })
     } catch (err) {
@@ -59,23 +63,22 @@ export default function ContactPage() {
             </h1>
             
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Not ready to book a call? Shoot me the details and I'll get back to you within 24 hours. 
-              Or just pick up the phone — I actually answer.
+              Not ready to book a call? Shoot me the details and I'll get back to you within 4 hours.
             </p>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/30 grid place-items-center flex-shrink-0">
                   <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
                   <div className="font-semibold text-white mb-1">Call or Text</div>
-                  <a href="tel:+1234567890" className="text-lg text-blue-400 hover:text-blue-300">
-                    (234) 567-8900
+                  <a href="tel:+14138965642" className="text-lg text-blue-400 hover:text-blue-300">
+                    (413) 896-5642
                   </a>
-                  <p className="text-sm text-slate-400 mt-1">Mon-Fri 9am-6pm EST</p>
+                  <p className="text-sm text-slate-400 mt-1">Mon-Fri 9am-5pm EST</p>
                 </div>
               </div>
 
@@ -90,7 +93,7 @@ export default function ContactPage() {
                   <a href="mailto:anthony@hextech.software" className="text-lg text-purple-400 hover:text-purple-300">
                     anthony@hextech.software
                   </a>
-                  <p className="text-sm text-slate-400 mt-1">I reply within 24 hours</p>
+                  <p className="text-sm text-slate-400 mt-1">I reply within 4 business hours</p>
                 </div>
               </div>
 
@@ -103,7 +106,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="font-semibold text-white mb-1">Based In</div>
-                  <p className="text-lg text-slate-300">Massachusetts</p>
+                  <p className="text-lg text-slate-300">Chicopee, Massachusetts</p>
                   <p className="text-sm text-slate-400 mt-1">Serving clients worldwide</p>
                 </div>
               </div>
@@ -122,7 +125,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Message sent!</h3>
-                <p className="text-slate-400 text-sm">I'll get back to you within 24 hours.</p>
+                <p className="text-slate-400 text-sm">I'll get back to you within 4 business hours.</p>
                 <button 
                   onClick={() => setStatus('idle')} 
                   className="mt-4 text-sm text-blue-400 hover:text-blue-300"
@@ -181,7 +184,7 @@ export default function ContactPage() {
 
                 {status === 'error' && (
                   <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm text-red-400">
-                    Something went wrong. Try again or email me directly.
+                    Something went wrong. Try again or call me directly at (413) 896-5642.
                   </div>
                 )}
 
@@ -196,7 +199,7 @@ export default function ContactPage() {
                 <p className="text-xs text-slate-500 text-center">
                   Prefer to talk? <button
                     data-cal-namespace="15min"
-                    data-cal-link="hextech/30min"
+                    data-cal-link="beyondthefold777/15min"
                     data-cal-config='{"layout":"month_view"}'
                     className="text-blue-400 hover:text-blue-300 underline"
                   >Book a free call</button> instead
