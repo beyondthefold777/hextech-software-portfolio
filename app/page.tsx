@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { getCalApi } from "@calcom/embed-react"
 import { useEffect, useState } from "react"
 
-const LOGO_SRC = "/rune_4k_gradient.png"
+const LOGO_SRC = "/rune_big_solid_blue_4k.png"
 const LOGO_ALT = "Hextech Software"
 
 export default function Home() {
@@ -39,15 +39,15 @@ export default function Home() {
       {/* Nav */}
       <nav className="container mx-auto px-6 py-4 md:py-6 flex justify-between items-center relative z-50">
         <div className="flex items-center gap-5">
-          <Image
-            src={LOGO_SRC}
-            alt={LOGO_ALT}
-            width={80}
-            height={80}
-            className="w-12 h-12 md:w-20 md:h-20 object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.5)]"
-            priority
-            unoptimized
-          />
+         <Image
+  src={LOGO_SRC}
+  alt={LOGO_ALT}
+  width={112}
+  height={112}
+  className="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.5)]"
+  priority
+  unoptimized
+/>
           <div className="hidden md:flex items-center gap-5">
             <div className="w-px h-8 bg-slate-800" />
             <span className="text- font-semibold tracking-[-0.01em] text-white">
@@ -64,32 +64,29 @@ export default function Home() {
           <Link href="/contact" className="hover:text-white transition">Contact</Link>
         </div>
 
-        <div className="flex items-center gap-3">
-          {/* Call Button - icon only on mobile */}
-          <a
-            href="tel:+14138965642"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] font-semibold transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-95 w-11 h-11 md:w-auto md:h-auto md:px-6 md:py-3"
-          >
-            {/* Phone icon - fixed SVG */}
-            <svg className="w-5 h-5 md:w-4 md:h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            <span className="hidden md:inline text-sm md:text-base">Call Now</span>
-          </a>
+      <div className="flex items-center gap-3">
+<a
+  href="tel:+14138965642"
+  className="inline-flex items-center justify-center rounded-full md:rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] font-semibold transition-all duration-300 shadow-lg shadow-blue-500/25 active:scale-95 w-11 h-11 md:w-auto md:h-auto md:px-6 md:py-3"
+>
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+  </svg>
+  <span className="hidden md:inline ml-2">Call Now</span>
+</a>
 
-          {/* Hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden w-11 h-11 grid place-items-center rounded-xl bg-slate-900 border border-slate-800"
-            aria-label="Menu"
-          >
-            <div className="space-y-1.5">
-              <span className={`block w-5 h-0.5 bg-white transition ${menuOpen? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-white transition ${menuOpen? 'opacity-0' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-white transition ${menuOpen? '-rotate-45 -translate-y-2' : ''}`} />
-            </div>
-          </button>
-        </div>
+  <button
+    onClick={() => setMenuOpen(!menuOpen)}
+    className="md:hidden w-11 h-11 grid place-items-center rounded-xl bg-slate-900 border border-slate-800"
+    aria-label="Menu"
+  >
+    <div className="space-y-1.5">
+      <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+      <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? 'opacity-0' : ''}`} />
+      <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+    </div>
+  </button>
+</div>
 
         {/* Mobile Menu */}
         {menuOpen && (
