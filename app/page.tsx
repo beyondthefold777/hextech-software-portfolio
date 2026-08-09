@@ -36,19 +36,41 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-slate-950 rune-pattern text-white">
-      {/* Nav */}
       <nav className="container mx-auto px-6 py-4 md:py-6 flex justify-between items-center relative z-50">
-        <div className="flex items-center gap-5">
-         <Image
-  src={LOGO_SRC}
-  alt={LOGO_ALT}
-  width={112}
-  height={112}
-  className="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.5)]"
-  priority
-  unoptimized
-/>
-          <div className="hidden md:flex items-center gap-5">
+        <div className="flex md:hidden items-center justify-between w-full">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="w-11 h-11 grid place-items-center rounded-full bg-slate-900 border border-slate-800"
+            aria-label="Menu"
+          >
+            <div className="space-y-1.5">
+              <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </div>
+          </button>
+
+          <a
+            href="tel:+14138965642"
+            className="inline-flex items-center justify-center rounded-full bg-[#3B82F6] hover:bg-[#2563EB] w-11 h-11 shadow-lg shadow-blue-500/25 active:scale-95"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </a>
+        </div>
+
+        <div className="hidden md:flex items-center gap-5">
+          <Image
+            src={LOGO_SRC}
+            alt={LOGO_ALT}
+            width={112}
+            height={112}
+            className="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.5)]"
+            priority
+            unoptimized
+          />
+          <div className="flex items-center gap-5">
             <div className="w-px h-8 bg-slate-800" />
             <span className="text- font-semibold tracking-[-0.01em] text-white">
               Hextech Software
@@ -64,51 +86,57 @@ export default function Home() {
           <Link href="/contact" className="hover:text-white transition">Contact</Link>
         </div>
 
-      <div className="flex items-center gap-3">
-<a
-  href="tel:+14138965642"
-  className="inline-flex items-center justify-center rounded-full md:rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] font-semibold transition-all duration-300 shadow-lg shadow-blue-500/25 active:scale-95 w-11 h-11 md:w-auto md:h-auto md:px-6 md:py-3"
->
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-  </svg>
-  <span className="hidden md:inline ml-2">Call Now</span>
-</a>
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="tel:+14138965642"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] font-semibold px-6 py-3 shadow-lg shadow-blue-500/25 transition-all active:scale-95"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Call Now
+          </a>
+        </div>
 
-  <button
-    onClick={() => setMenuOpen(!menuOpen)}
-    className="md:hidden w-11 h-11 grid place-items-center rounded-xl bg-slate-900 border border-slate-800"
-    aria-label="Menu"
-  >
-    <div className="space-y-1.5">
-      <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-      <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? 'opacity-0' : ''}`} />
-      <span className={`block w-5 h-0.5 bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-    </div>
-  </button>
-</div>
-
-        {/* Mobile Menu */}
         {menuOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 mx-6 p-6 rounded-2xl bg-slate-900 border border-slate-800 md:hidden shadow-2xl">
-            <div className="flex flex-col gap-5 text- font-medium">
-              <Link href="#services" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">What We Build</Link>
-              <Link href="/facts" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Facts</Link>
-              <Link href="#work" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Work</Link>
-              <Link href="/pricing" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Pricing</Link>
-              <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Contact</Link>
-              <div className="h-px bg-slate-800 my-1" />
-              <a href="tel:+14138965642" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] px-6 py-3.5 font-semibold">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 0 0 0.7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                Call (413) 896-5642
-              </a>
+          <div className="fixed inset-0 z-[60] md:hidden">
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
+            <div className="absolute top-0 left-0 w-[85%] max-w- h-full bg-slate-950 border-r border-slate-800 p-6 shadow-2xl">
+              <div className="flex justify-between items-center">
+                <span className="text- font-semibold tracking-[-0.01em] text-white">Hextech Software</span>
+                <button onClick={() => setMenuOpen(false)} className="w-9 h-9 grid place-items-center rounded-full bg-slate-900 border border-slate-800">✕</button>
+              </div>
+              <div className="h-px bg-slate-800 my-6" />
+              <div className="flex flex-col gap-5 text- font-medium">
+                <Link href="#services" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">What We Build</Link>
+                <Link href="/facts" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Facts</Link>
+                <Link href="#work" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Work</Link>
+                <Link href="/pricing" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Pricing</Link>
+                <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Contact</Link>
+                <div className="h-px bg-slate-800 my-1" />
+                <a href="tel:+14138965642" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] px-6 py-3.5 font-semibold">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  Call (413) 896-5642
+                </a>
+              </div>
             </div>
           </div>
         )}
       </nav>
 
-      {/* Hero */}
-      <section className="container mx-auto px-6 py-12 md:py-24 relative">
+      <div className="md:hidden flex flex-col items-center pt-8 pb-4">
+        <Image
+          src={LOGO_SRC}
+          alt={LOGO_ALT}
+          width={160}
+          height={160}
+          className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+          priority
+          unoptimized
+        />
+      </div>
+
+      <section className="container mx-auto px-6 py-6 md:py-24 relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
         <div className="absolute top-20 right-40 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
 
@@ -155,7 +183,6 @@ export default function Home() {
             </a>
           </div>
 
-          {/* What We Can Do Grid */}
           <div id="services" className="grid md:grid-cols-3 gap-4 md:gap-6 text-left">
             <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur hover:border-purple-500/30 transition-colors">
               <h3 className="text-purple-400 font-bold mb-3">For Your Customers</h3>
@@ -191,7 +218,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* PWA FACTS TEASER */}
           <section id="facts" className="mt-16 md:mt-20 text-left">
             <div className="flex justify-between items-end mb-8">
               <div>
@@ -233,7 +259,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Timeline */}
           <div className="mt-16 md:mt-20 grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto text-left">
             <div className="bg-slate-900 border border-blue-500/20 rounded-xl p-6 relative overflow-hidden hover:border-blue-500/40 transition-colors">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
