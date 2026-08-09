@@ -92,7 +92,7 @@ export default function Home() {
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] font-semibold px-6 py-3 shadow-lg shadow-blue-500/25 transition-all active:scale-95"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+              <path d="M6.62 10.79a15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
             </svg>
             Call Now
           </a>
@@ -113,13 +113,6 @@ export default function Home() {
                 <Link href="#work" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Work</Link>
                 <Link href="/pricing" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Pricing</Link>
                 <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Contact</Link>
-                <div className="h-px bg-slate-800 my-1" />
-                <a href="tel:+14138965642" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] px-6 py-3.5 font-semibold">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
-                  </svg>
-                  Call (413) 896-5642
-                </a>
               </div>
             </div>
           </div>
@@ -286,7 +279,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-slate-500 text-sm mt-10 pb-10">
-            Built with React, Next.js, React Native, Node.js & AI — modern stack that scales with you.
+            © 2026 Hextech Software. All rights reserved.
           </p>
         </div>
       </section>
