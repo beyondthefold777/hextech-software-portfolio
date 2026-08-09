@@ -1,7 +1,11 @@
 "use client"
 import Link from 'next/link'
+import Image from 'next/image'
 import { getCalApi } from "@calcom/embed-react"
 import { useEffect } from "react"
+
+const LOGO_SRC = "/rune_big_solid_blue_4k.png"
+const LOGO_ALT = "Hextech Software"
 
 export default function Home() {
   useEffect(() => {
@@ -35,9 +39,22 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 rune-pattern text-white">
       {/* Nav */}
       <nav className="container mx-auto px-6 py-6 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg"></div>
-          <span className="text-2xl font-bold">Hextech Software</span>
+        <div className="flex items-center gap-5">
+          <Image
+            src={LOGO_SRC}
+            alt={LOGO_ALT}
+            width={80}
+            height={80}
+            className="w-30 h-30 object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.5)]"
+            priority
+            unoptimized
+          />
+          <div className="hidden md:flex items-center gap-5">
+            <div className="w-px h-8 bg-slate-800" />
+           <span className="text- font-semibold tracking-[-0.01em] text-white">
+  Hextech Software
+</span>
+          </div>
         </div>
 
         <div className="hidden md:flex gap-8 text-slate-300">
@@ -50,9 +67,13 @@ export default function Home() {
 
         <a
           href="tel:+14138965642"
-          className="px-5 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 font-medium transition"
+          className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] font-semibold text-sm md:text-base transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95"
         >
-          Call Now
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span className="hidden sm:inline">Call Now</span>
+          <span className="sm:hidden">Call</span>
         </a>
       </nav>
 
@@ -92,13 +113,13 @@ export default function Home() {
               data-cal-namespace="15min"
               data-cal-link="beyondthefold777/15min"
               data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
-              className="px-8 py-4 rounded-lg bg-blue-500 hover:bg-blue-600 font-semibold text-lg transition"
+              className="group px-8 py-4 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] font-semibold text-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95"
             >
               Book Free Scope Call →
             </button>
             <a
               href="#services"
-              className="px-8 py-4 rounded-lg bg-slate-800 border border-slate-700 hover:bg-slate-700 font-semibold text-lg"
+              className="px-8 py-4 rounded-xl bg-slate-800/80 border border-slate-700 hover:bg-slate-700/80 hover:border-slate-600 font-semibold text-lg backdrop-blur transition-all duration-300 hover:scale-105 active:scale-95"
             >
               See What We Build
             </a>
@@ -106,7 +127,7 @@ export default function Home() {
 
           {/* What We Can Do Grid */}
           <div id="services" className="grid md:grid-cols-3 gap-6 text-left">
-            <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur">
+            <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur hover:border-purple-500/30 transition-colors">
               <h3 className="text-purple-400 font-bold mb-3">For Your Customers</h3>
               <ul className="space-y-2 text-slate-300 text-sm">
                 <li className="flex gap-2"><span className="text-purple-400">•</span> Installable PWA — Add to Home Screen like a real app</li>
@@ -117,7 +138,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur">
+            <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur hover:border-blue-500/30 transition-colors">
               <h3 className="text-blue-400 font-bold mb-3">For Your Operations</h3>
               <ul className="space-y-2 text-slate-300 text-sm">
                 <li className="flex gap-2"><span className="text-blue-400">•</span> Camera capture, file & photo uploads</li>
@@ -128,7 +149,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur">
+            <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur hover:border-emerald-500/30 transition-colors">
               <h3 className="text-emerald-400 font-bold mb-3">For Your Growth</h3>
               <ul className="space-y-2 text-slate-300 text-sm">
                 <li className="flex gap-2"><span className="text-emerald-400">•</span> Admin dashboard to manage everything</li>
@@ -158,25 +179,25 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-violet-500/30 transition-colors">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 grid place-items-center text-lg">📱</div>
                 <h3 className="mt-4 font-semibold">On the Home Screen</h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">One tap to open. Not lost in 40 tabs. 3.2x more repeat visits vs mobile web.</p>
               </div>
-              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-blue-500/30 transition-colors">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 grid place-items-center text-lg">⚡</div>
                 <h3 className="mt-4 font-semibold">Loads in &lt;1 Second</h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">Even on 3G. Google ranks you higher and 53% fewer people bounce.</p>
               </div>
-              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-fuchsia-500 to-pink-500 grid place-items-center text-lg">🔔</div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-blue-500/30 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 grid place-items-center text-lg">🔔</div>
                 <h3 className="mt-4 font-semibold">Push Notifications</h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">Free marketing. "Order ready" / "20% off today" direct to their phone.</p>
               </div>
             </div>
 
             <div className="mt-6 text-center">
-              <Link href="/facts" className="inline-flex h-11 px-6 rounded-full bg-white text-black text-sm font-semibold items-center gap-2 hover:bg-slate-200 transition">
+              <Link href="/facts" className="inline-flex h-11 px-6 rounded-full bg-white text-black text-sm font-semibold items-center gap-2 hover:bg-slate-200 transition-all hover:scale-105 active:scale-95">
                 Read full Facts & FAQ →
               </Link>
             </div>
@@ -184,8 +205,8 @@ export default function Home() {
 
           {/* Timeline */}
           <div className="mt-20 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
-            <div className="bg-slate-900 border border-blue-500/20 rounded-xl p-6 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
+            <div className="bg-slate-900 border border-blue-500/20 rounded-xl p-6 relative overflow-hidden hover:border-blue-500/40 transition-colors">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
               <h4 className="font-bold text-lg mb-1">Progressive Web App (PWA)</h4>
               <p className="text-blue-400 text-sm font-semibold mb-3">Timeline: 7-14 days • Most Popular</p>
               <p className="text-slate-400 text-sm mb-3">Installs to home screen, works like a native app, no App Store needed. Perfect to launch fast.</p>
@@ -195,8 +216,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-slate-900 border border-purple-500/20 rounded-xl p-6 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-purple-500"></div>
+            <div className="bg-slate-900 border border-purple-500/20 rounded-xl p-6 relative overflow-hidden hover:border-purple-500/40 transition-colors">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
               <h4 className="font-bold text-lg mb-1">Native iOS & Android App</h4>
               <p className="text-purple-400 text-sm font-semibold mb-3">Timeline: 30-45 days • App Store Ready</p>
               <p className="text-slate-400 text-sm mb-3">Full native build for Apple & Google Play. Includes PWA + native wrappers + store submission.</p>
@@ -207,7 +228,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="text-center text-slate-500 text-sm mt-10">
+          <p className="text-center text-slate-500 text-sm mt-10 pb-10">
             Built with React, Next.js, React Native, Node.js & AI — modern stack that scales with you.
           </p>
         </div>
