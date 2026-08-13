@@ -81,7 +81,7 @@ export default function Home() {
         <div className="hidden md:flex gap-8 text-slate-300">
           <Link href="#services" className="hover:text-white transition">What We Build</Link>
           <Link href="/facts" className="hover:text-white transition">Facts</Link>
-          <Link href="#work" className="hover:text-white transition">Work</Link>
+          <Link href="/work" className="hover:text-white transition">Work</Link>
           <Link href="/pricing" className="hover:text-white transition">Pricing</Link>
           <Link href="/contact" className="hover:text-white transition">Contact</Link>
         </div>
@@ -178,37 +178,38 @@ export default function Home() {
             </a>
           </div>
 
+          {/* UPDATED WHAT WE BUILD - MATCHES PRICING */}
           <div id="services" className="grid md:grid-cols-3 gap-4 md:gap-6 text-left">
             <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur hover:border-purple-500/30 transition-colors">
               <h3 className="text-purple-400 font-bold mb-3">For Your Customers</h3>
               <ul className="space-y-2 text-slate-300 text-sm">
                 <li className="flex gap-2"><span className="text-purple-400">•</span> Installable PWA — Add to Home Screen like a real app</li>
-                <li className="flex gap-2"><span className="text-purple-400">•</span> Client portals with login, profiles & dashboards</li>
-                <li className="flex gap-2"><span className="text-purple-400">•</span> Online booking, scheduling & payments</li>
-                <li className="flex gap-2"><span className="text-purple-400">•</span> Push notifications that actually get seen</li>
-                <li className="flex gap-2"><span className="text-purple-400">•</span> Works offline — no signal needed</li>
+                <li className="flex gap-2"><span className="text-purple-400">•</span> Tap-to-call, Directions, Share + offline page</li>
+                <li className="flex gap-2"><span className="text-purple-400">•</span> Simple Bookings: customer requests time, you confirm (Growth)</li>
+                <li className="flex gap-2"><span className="text-purple-400">•</span> Real Bookings: live calendar, blocks instantly, no double-booking (Pro)</li>
+                <li className="flex gap-2"><span className="text-purple-400">•</span> Push notifications — send offers like a text, even when app closed</li>
               </ul>
             </div>
 
             <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur hover:border-blue-500/30 transition-colors">
               <h3 className="text-blue-400 font-bold mb-3">For Your Operations</h3>
               <ul className="space-y-2 text-slate-300 text-sm">
-                <li className="flex gap-2"><span className="text-blue-400">•</span> Camera capture, file & photo uploads</li>
-                <li className="flex gap-2"><span className="text-blue-400">•</span> Custom forms, contracts & e-signatures</li>
-                <li className="flex gap-2"><span className="text-blue-400">•</span> Real-time messaging & chat built-in</li>
-                <li className="flex gap-2"><span className="text-blue-400">•</span> GPS tracking, maps & location features</li>
-                <li className="flex gap-2"><span className="text-blue-400">•</span> Automated workflows & reminders</li>
+                <li className="flex gap-2"><span className="text-blue-400">•</span> Every lead saves to YOUR database (MongoDB) + email backup</li>
+                <li className="flex gap-2"><span className="text-blue-400">•</span> QR ordering, GPS delivery tracking, field staff location</li>
+                <li className="flex gap-2"><span className="text-blue-400">•</span> Class Scheduling: recurring, capacity limits, waitlists (Pro)</li>
+                <li className="flex gap-2"><span className="text-blue-400">•</span> Staff assignment, auto email/SMS reminders to reduce no-shows</li>
+                <li className="flex gap-2"><span className="text-blue-400">•</span> Payments: Stripe deposits, refunds right from dashboard (Pro)</li>
               </ul>
             </div>
 
             <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 backdrop-blur hover:border-emerald-500/30 transition-colors">
               <h3 className="text-emerald-400 font-bold mb-3">For Your Growth</h3>
               <ul className="space-y-2 text-slate-300 text-sm">
-                <li className="flex gap-2"><span className="text-emerald-400">•</span> Admin dashboard to manage everything</li>
-                <li className="flex gap-2"><span className="text-emerald-400">•</span> Your own database — export anytime</li>
-                <li className="flex gap-2"><span className="text-emerald-400">•</span> iOS & Android App Store ready</li>
-                <li className="flex gap-2"><span className="text-emerald-400">•</span> AI features, analytics & reporting</li>
-                <li className="flex gap-2"><span className="text-emerald-400">•</span> You own the GitHub repo Day 1 — no hostage code</li>
+                <li className="flex gap-2"><span className="text-emerald-400">•</span> Admin dashboard — edit menu/prices/photos/hours yourself from phone</li>
+                <li className="flex gap-2"><span className="text-emerald-400">•</span> Customer self-service — they book, pay, reschedule & cancel themselves (Pro)</li>
+                <li className="flex gap-2"><span className="text-emerald-400">•</span> Customer logins — see history, 1-tap rebook, loyalty points</li>
+                <li className="flex gap-2"><span className="text-emerald-400">•</span> Analytics — views, leads, where they came from + daily backups</li>
+                <li className="flex gap-2"><span className="text-emerald-400">•</span> You own GitHub Day 1 + full DB export — iOS & Android upgrade path</li>
               </ul>
             </div>
           </div>
