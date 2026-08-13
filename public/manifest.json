@@ -1,0 +1,24 @@
+{
+  "name": "Hextech Software",
+  "short_name": "Hextech",
+  "description": "Software You Actually Own. Custom PWAs starting at $750 - you own the code, DB, and future.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/rune_big_solid_blue_4k.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/rune_big_solid_blue_4k.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

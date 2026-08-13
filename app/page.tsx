@@ -110,7 +110,7 @@ export default function Home() {
               <div className="flex flex-col gap-5 text- font-medium">
                 <Link href="#services" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">What We Build</Link>
                 <Link href="/facts" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Facts</Link>
-                <Link href="#work" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Work</Link>
+                <Link href="/work" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Work</Link>
                 <Link href="/pricing" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Pricing</Link>
                 <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-slate-300 hover:text-white transition">Contact</Link>
               </div>
