@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+html, body {
+  background: #000000 !important;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+/* Fixes white bar at bottom on iOS standalone */
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: #000000;
+}
+
 :root {
   /* Base: Template dark blue */
   --bg-primary: #0f172a;
