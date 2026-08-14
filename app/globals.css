@@ -1,56 +1,55 @@
 @import "tailwindcss";
 
-html, body {
-  background: #000000 !important;
-  margin: 0;
-  padding: 0;
-  overscroll-behavior: none;
-}
-
-/* Fixes white bar at bottom on iOS standalone */
-body {
-  padding-bottom: env(safe-area-inset-bottom);
-  background-color: #000000;
-}
-
 :root {
-  /* Base: Template dark blue */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  
-  /* Hextech Purple Accent - Arcane inspired */
+  color-scheme: dark;
+  --bg-primary: #000000;
+  --bg-secondary: #0f172a;
   --hextech-purple: #a855f7;
   --hextech-purple-glow: #c084fc;
   --hextech-blue: #3b82f6;
   --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
-  
-  /* Text */
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
 }
 
+html {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+}
+
 @layer base {
   body {
-    background: var(--bg-primary);
     color: var(--text-primary);
   }
 }
 
 @layer utilities {
-  /* Hextech glow effect for buttons/CTAs */
   .hextech-glow {
     box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
     transition: all 0.3s ease;
   }
-
   .hextech-glow:hover {
     box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
     transform: translateY(-2px);
   }
-
-  /* Rune pattern background */
   .rune-pattern {
     background-image: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
                       radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    background-color: #000000;
   }
 }
